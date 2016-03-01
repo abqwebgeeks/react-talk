@@ -16,3 +16,10 @@ other components, whether they're native (i.e. `<input>`) or more complex.
 
 We place this top-level component in a folder called "containers" to separate it from lower-level components. This will become more clear
 in later chapters.
+
+## Chapter 2
+```
+git checkout 2-some-todos
+```
+Add a few static todos in the container, then display them through a hierarchy of components, again illustrating that everything is just a
+component, including `<li>`, `<label>` and `<input>` tags.
