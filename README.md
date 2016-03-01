@@ -33,4 +33,3 @@ to the `todos` list. We do this by adding a `onKeyUp` listener to the input, all
 
 > <sup><a name="#state-warning">1</a></sup>: this isn't really a good way to structure *real-wold* applications, but serves the purpose of
 this demo. We'll fix this in a later chapter.
-=======
