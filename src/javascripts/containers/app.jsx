@@ -4,19 +4,19 @@ import Todos from '../components/todos.jsx';
 
 const todos = [
   {
-    complete: true,
+    completed: true,
     text: 'Add an input for adding todos'
   },
   {
-    complete: false,
+    completed: false,
     text: 'Add a few dummy todos'
   },
   {
-    complete: false,
+    completed: false,
     text: 'Implement ability to add todos'
   },
   {
-    complete: false,
+    completed: false,
     text: 'Implement ability to complete todos'
   }
 ];
