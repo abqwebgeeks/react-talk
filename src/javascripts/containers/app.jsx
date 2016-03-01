@@ -8,25 +8,21 @@ const todos = [
   {
     uuid: uuid.v4(),
     completed: true,
-    editing: true,
     text: 'Add an input for adding todos'
   },
   {
     uuid: uuid.v4(),
     completed: true,
-    editing: true,
     text: 'Add a few dummy todos'
   },
   {
     uuid: uuid.v4(),
     completed: false,
-    editing: true,
     text: 'Implement ability to add todos'
   },
   {
     uuid: uuid.v4(),
     completed: false,
-    editing: true,
     text: 'Implement ability to complete todos'
   }
 ];
@@ -57,13 +53,18 @@ class App extends Component {
     }
   }
 
-  handleTodoCompleteToggle(uuid, completed) {
+  setAllTodosComplete(completed) {
+    const todos = this.state.todos.map(
+      todo => Object.assign({}, todo, {completed}));
+    this.setState({todos})
+  }
+
+  setTodoComplete(uuid, completed) {
     const {todos} = this.state;
     const index = todos.findIndex(todo => todo.uuid === uuid);
     if (index !== -1) {
       // Return a new object with `completed` flipped
-      const todo = todos[index];
-      const toggledTodo = Object.assign({}, todo, {completed});
+      const toggledTodo = Object.assign({}, todos[index], {completed});
 
       // Return a new array, replacing the selected index
       this.setState({
@@ -88,7 +89,8 @@ class App extends Component {
         </header>
         <Todos
           items={this.state.todos}
-          onComplete={this.handleTodoCompleteToggle.bind(this)} />
+          onAllComplete={this.setAllTodosComplete.bind(this)}
+          onComplete={this.setTodoComplete.bind(this)} />
       </div>
     )
   }

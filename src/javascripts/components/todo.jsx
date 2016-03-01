@@ -8,7 +8,8 @@ const Todo = ({completed, text, uuid, onComplete}) => (
       <input
         className="toggle"
         type="checkbox"
-        onClick={(evt) => onComplete(uuid, evt.target.checked)} />
+        checked={completed}
+        onChange={evt => onComplete(uuid, evt.target.checked)} />
       <label>{text}</label>
     </div>
   </li>
