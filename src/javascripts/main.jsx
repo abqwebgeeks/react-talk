@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 
 import '../stylesheets/main.scss'
 
-const HelloWorld = () => (
-  <div className="todoapp">
-    <h1>Hello World!!</h1>
-  </div>
-);
+import App from './components/app.jsx';
 
-ReactDOM.render(<HelloWorld />, document.getElementById('app-container'));
+ReactDOM.render(<App />, document.getElementById('app-container'));
