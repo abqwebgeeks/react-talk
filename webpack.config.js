@@ -7,6 +7,7 @@ var jsxTest = /\.jsx?/;
 var jsxPath = path.join(__dirname, 'src/javascripts');
 
 module.exports = {
+  devtool: 'source-map',
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:8080',
     'webpack/hot/only-dev-server',
