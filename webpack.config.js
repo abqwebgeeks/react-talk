@@ -1,3 +1,5 @@
+require('babel-polyfill');
+
 var path = require('path');
 var webpack = require('webpack');
 
@@ -28,7 +30,16 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.(sass|scss)$/,
+        loaders: ['style', 'css', 'sass']
       }
+    ]
+  },
+  sassLoader: {
+    includePaths: [
+      path.resolve(path.join(__dirname, './src/stylesheets'))
     ]
   },
   devServer: {
