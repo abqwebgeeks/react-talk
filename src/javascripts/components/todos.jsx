@@ -7,7 +7,11 @@ const Todos = ({items}) => {
     return (
       <section className="main">
         <ul className="todo-list">
-          {items.map(todo => <Todo {...todo} />)}
+          {items.map(todo => (
+            <Todo
+              {...todo}
+              key={`todo-${todo.uuid}`} />
+          ))}
         </ul>
       </section>
     );
