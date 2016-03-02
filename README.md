@@ -32,4 +32,4 @@ By moving the `todos` list in our container into state<sup>[1](#state-warning)</
 to the `todos` list. We do this by adding a `onKeyUp` listener to the input, allowing us to either save or clear the value.
 
 > <sup><a name="#state-warning">1</a></sup>: this isn't really a good way to structure *real-wold* applications, but serves the purpose of
-this demo.
+this demo. We'll fix this in a later chapter.
