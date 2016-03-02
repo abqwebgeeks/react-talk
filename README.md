@@ -23,3 +23,13 @@ git checkout 2-some-todos
 ```
 Add a few static todos in the container, then display them through a hierarchy of components, again illustrating that everything is just a
 component, including `<li>`, `<label>` and `<input>` tags.
+
+## Chapter 3
+```
+git checkout 3-add-todos
+```
+By moving the `todos` list in our container into state<sup>[1](#state-warning)</sup> we can now modify it, in this case by adding new todos
+to the `todos` list. We do this by adding a `onKeyUp` listener to the input, allowing us to either save or clear the value.
+
+> <sup><a name="#state-warning">1</a></sup>: this isn't really a good way to structure *real-wold* applications, but serves the purpose of
+this demo. We'll fix this in a later chapter.
