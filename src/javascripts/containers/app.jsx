@@ -1,3 +1,4 @@
+import keycodes from 'keycodes';
 import React, {Component} from 'react';
 import uuid from 'uuid';
 
@@ -26,11 +27,30 @@ const todos = [
   }
 ];
 
+const ENTER_KEY = keycodes('enter');
+const ESCAPE_KEY = keycodes('escape');
+
 class App extends Component {
   componentWillMount() {
     this.setState({
       todos
     })
+  }
+
+  handleAddTodoKeyup(evt) {
+    if (evt.which === ENTER_KEY) {
+      this.setState({
+        todos: [...this.state.todos, {
+          uuid: uuid.v4(),
+          complete: false,
+          text: evt.target.value
+        }]
+      });
+      return evt.target.value = '';
+    }
+    if (evt.which === ESCAPE_KEY) {
+      return evt.target.value = '';
+    }
   }
 
   render() {
