@@ -1,6 +1,38 @@
 import React, {Component} from 'react';
+import uuid from 'uuid';
+
+import Todos from '../components/todos.jsx';
+
+const todos = [
+  {
+    uuid: uuid.v4(),
+    completed: true,
+    text: 'Add an input for adding todos'
+  },
+  {
+    uuid: uuid.v4(),
+    completed: true,
+    text: 'Add a few dummy todos'
+  },
+  {
+    uuid: uuid.v4(),
+    completed: false,
+    text: 'Implement ability to add todos'
+  },
+  {
+    uuid: uuid.v4(),
+    completed: false,
+    text: 'Implement ability to complete todos'
+  }
+];
 
 class App extends Component {
+  componentWillMount() {
+    this.setState({
+      todos
+    })
+  }
+
   render() {
     return (
       <div className="todoapp">
@@ -10,6 +42,7 @@ class App extends Component {
             className="new-todo"
             placeholder="What needs to be done?" />
         </header>
+        <Todos items={this.state.todos} />
       </div>
     )
   }
