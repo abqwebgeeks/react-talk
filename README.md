@@ -33,3 +33,10 @@ to the `todos` list. We do this by adding a `onKeyUp` listener to the input, all
 
 > <sup><a name="#state-warning">1</a></sup>: this isn't really a good way to structure *real-wold* applications, but serves the purpose of
 this demo. We'll fix this in a later chapter.
+
+## Chapter 4
+```
+git checkout 4-todo-completion
+```
+By passing down callbacks from our top-level container component, we can capture events from child components to toggle the completion
+status of a todo. We're careful to only move the state forward by returning new objects and arrays.
