@@ -40,3 +40,21 @@ git checkout 4-todo-completion
 ```
 By passing down callbacks from our top-level container component, we can capture events from child components to toggle the completion
 status of a todo. We're careful to only move the state forward by returning new objects and arrays.
+
+## Chapter 5
+```
+git checkout 5-introduce-redux
+```
+As we continue to add functionality, our Container starts getting pretty busy. It's time to implement application state using Redux.
+
+Redux maintains the application state in a "store". It doesn't care how you structure this, it just provides tools for managing this state
+through "actions" and "reducers".
+
+**Actions** are things that happen in the application, like `addTodo` or `setTodoComplete`. They do not modify the application state, just
+announce that something *should* happen. Actions are simple function that return *intent* and optionally some payload.
+
+**Reducers** are simple functions that modify the state of the application. They are not called directly, but rather get called by Redux
+a result of matching an **Action***'s intent.
+
+When an update happens to the application state, this is passed down through the application as props. We connect our high-level Container
+to Redux with `connect`, which maps application state to `this.props` in the Container.
