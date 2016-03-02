@@ -33,22 +33,6 @@ class App extends Component {
     })
   }
 
-  handleAddTodoKeyup(evt) {
-    if (evt.which === 13) {
-      this.setState({
-        todos: [...this.state.todos, {
-          uuid: uuid.v4(),
-          complete: false,
-          text: evt.target.value
-        }]
-      });
-      return evt.target.value = '';
-    }
-    if (evt.which === 27) {
-      return evt.target.value = '';
-    }
-  }
-
   render() {
     return (
       <div className="todoapp">
