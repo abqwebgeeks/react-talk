@@ -40,8 +40,7 @@ class App extends Component {
           <h1>todos</h1>
           <input
             className="new-todo"
-            placeholder="What needs to be done?"
-            onKeyUp={this.handleAddTodoKeyup.bind(this)} />
+            placeholder="What needs to be done?" />
         </header>
         <Todos items={this.state.todos} />
       </div>
