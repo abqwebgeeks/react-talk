@@ -1,8 +1,5 @@
-<<<<<<< 62a1874f93e6b2a0e136a72dd384e9a536064045
-import keycodes from 'keycodes';
-=======
 import {connect} from 'react-redux';
->>>>>>> Implement Redux and refactor application state to Redux store
+import keycodes from 'keycodes';
 import React, {Component} from 'react';
 
 import Todos from '../components/todos.jsx';
